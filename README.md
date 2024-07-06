@@ -98,3 +98,9 @@ This project is an AWS Cost Management bot that integrates with Slack to provide
      - In the "Environment variables" section, add a new variable:
        - Key: SLACK_WEBHOOK_URL
        - Value: (Paste your Slack webhook URL here)
+  # Setting up a schedule on Amazon EventBridge to periodically send messages to Slack (Optional)
+  - Create a new rule in Amazon EventBridge.
+  - Use a cron expression (cron(0 0 1 * ? *)) or rate expression (rate(30 days)) for a 30-day schedule.
+  - Set your Lambda function as the target.
+  - Ensure the Lambda function has the necessary permissions.
+  - Test the rule to ensure it triggers the Lambda function and sends the Slack message.
